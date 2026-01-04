@@ -1,36 +1,69 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { 
+  SiReact, 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiPython,
+  SiMongodb,
+  SiPostgresql,
+  SiGit,
+  SiDocker,
+  SiAmazonwebservices,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiRedux,
+  SiFirebase,
+  SiVercel,
+  SiGithub,
+  SiLinux,
+  SiVite,
+  SiPostman
+} from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 import './Skills.css';
 
 interface Skill {
   name: string;
-  icon: string;
+  icon: React.ReactNode;
   color: string;
   category: string;
 }
 
 const skills: Skill[] = [
   // Frontend
-  { name: 'React', icon: '⚛️', color: '#61dafb', category: 'Frontend' },
-  { name: 'Next.js', icon: '▲', color: '#ffffff', category: 'Frontend' },
-  { name: 'TypeScript', icon: 'TS', color: '#3178c6', category: 'Frontend' },
-  { name: 'Tailwind CSS', icon: '🎨', color: '#06b6d4', category: 'Frontend' },
-  { name: 'Three.js', icon: '🔺', color: '#000000', category: 'Frontend' },
+  { name: 'React', icon: <SiReact />, color: '#61dafb', category: 'Frontend' },
+  { name: 'Next.js', icon: <SiNextdotjs />, color: '#ffffff', category: 'Frontend' },
+  { name: 'TypeScript', icon: <SiTypescript />, color: '#3178c6', category: 'Frontend' },
+  { name: 'JavaScript', icon: <SiJavascript />, color: '#f7df1e', category: 'Frontend' },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06b6d4', category: 'Frontend' },
+  { name: 'HTML5', icon: <SiHtml5 />, color: '#e34f26', category: 'Frontend' },
+  { name: 'CSS3', icon: <SiCss3 />, color: '#1572b6', category: 'Frontend' },
+  { name: 'Redux', icon: <SiRedux />, color: '#764abc', category: 'Frontend' },
   
   // Backend
-  { name: 'Node.js', icon: '🟢', color: '#339933', category: 'Backend' },
-  { name: 'Express.js', icon: '🚂', color: '#ffffff', category: 'Backend' },
-  { name: 'Python', icon: '🐍', color: '#3776ab', category: 'Backend' },
-  { name: 'MongoDB', icon: '🍃', color: '#47a248', category: 'Backend' },
-  { name: 'PostgreSQL', icon: '🐘', color: '#336791', category: 'Backend' },
+  { name: 'Node.js', icon: <SiNodedotjs />, color: '#339933', category: 'Backend' },
+  { name: 'Express.js', icon: <SiExpress />, color: '#ffffff', category: 'Backend' },
+  { name: 'Python', icon: <SiPython />, color: '#3776ab', category: 'Backend' },
+  { name: 'Java', icon: <FaJava />, color: '#ed8b00', category: 'Backend' },
+  { name: 'MongoDB', icon: <SiMongodb />, color: '#47a248', category: 'Backend' },
+  { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#336791', category: 'Backend' },
+  { name: 'Firebase', icon: <SiFirebase />, color: '#ffca28', category: 'Backend' },
   
   // Tools & Others
-  { name: 'Git', icon: '📦', color: '#f05032', category: 'Tools' },
-  { name: 'Docker', icon: '🐳', color: '#2496ed', category: 'Tools' },
-  { name: 'WebRTC', icon: '📹', color: '#333333', category: 'Tools' },
-  { name: 'Socket.io', icon: '🔌', color: '#010101', category: 'Tools' },
-  { name: 'AWS', icon: '☁️', color: '#ff9900', category: 'Tools' },
+  { name: 'Git', icon: <SiGit />, color: '#f05032', category: 'Tools' },
+  { name: 'GitHub', icon: <SiGithub />, color: '#ffffff', category: 'Tools' },
+  { name: 'Docker', icon: <SiDocker />, color: '#2496ed', category: 'Tools' },
+  { name: 'AWS', icon: <SiAmazonwebservices />, color: '#ff9900', category: 'Tools' },
+  { name: 'Vercel', icon: <SiVercel />, color: '#ffffff', category: 'Tools' },
+  { name: 'Vite', icon: <SiVite />, color: '#646cff', category: 'Tools' },
+  { name: 'Linux', icon: <SiLinux />, color: '#fcc624', category: 'Tools' },
+  { name: 'Postman', icon: <SiPostman />, color: '#ff6c37', category: 'Tools' },
 ];
 
 function SkillCard({ skill, index }: { skill: Skill; index: number }) {
