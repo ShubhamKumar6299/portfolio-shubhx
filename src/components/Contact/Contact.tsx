@@ -43,7 +43,11 @@ export default function Contact() {
     
     try {
       // Send to Discord webhook
-      const discordWebhookUrl = 'https://discord.com/api/webhooks/1457441501524263024/uaERDmh2FgH-ICJZg-r94th1vO9eNiuIgGPjPZIfDUD_JAbn5WDIAAHZ0iplxIH6QEi3';
+      const discordWebhookUrl = import.meta.env.VITE_DISCORD_WEBHOOK_URL;
+      
+      if (!discordWebhookUrl) {
+        throw new Error('Discord webhook URL not configured');
+      }
       
       const discordMessage = {
         embeds: [{
