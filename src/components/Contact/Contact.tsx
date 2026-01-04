@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import './Contact.css';
@@ -11,11 +11,7 @@ interface FormData {
   message: string;
 }
 
-// Your email for contact
-const CONTACT_EMAIL = 'satyaanandsharma9534@gmail.com';
-
 export default function Contact() {
-  const formRef = useRef<HTMLFormElement>(null);
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
